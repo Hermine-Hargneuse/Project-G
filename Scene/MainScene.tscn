@@ -1,12 +1,19 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Scene/Enemy.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scene/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scripts/MainScene.gd" type="Script" id=3]
 
 [node name="MainScene" type="Node2D"]
+script = ExtResource( 3 )
 
 [node name="Enemy" parent="." instance=ExtResource( 1 )]
-position = Vector2( 344.623, 177.274 )
+position = Vector2( 416.056, 435.227 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 visible = true
+position = Vector2( 346.847, 164.296 )
+
+[node name="Enemy_spawn_timer" type="Timer" parent="."]
+autostart = true
+[connection signal="timeout" from="Enemy_spawn_timer" to="." method="_on_Enemy_spawn_timer_timeout"]
