@@ -8,3 +8,6 @@ func _process(delta):
 	velocity.y=  int(Input.is_action_pressed("move_down")) - int(Input.is_action_pressed("move_up"))
 
 	global_position += speed * velocity * delta
+	
+func die():
+	queue_free()
