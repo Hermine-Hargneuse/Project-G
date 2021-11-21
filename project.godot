@@ -18,6 +18,13 @@ _global_script_class_icons={
 config/name="Godot Game"
 config/icon="res://icon.png"
 
+[display]
+
+window/size/width=640
+window/size/height=300
+window/size/test_width=374
+window/size/test_height=168
+
 [rendering]
 
 environment/default_environment="res://default_env.tres"
