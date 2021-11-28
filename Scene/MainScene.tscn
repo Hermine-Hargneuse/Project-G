@@ -13,7 +13,7 @@ position = Vector2( 541.409, 322.435 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 visible = true
-position = Vector2( 551.391, 339.109 )
+position = Vector2( 558.391, 339.609 )
 
 [node name="Wave_controller" parent="." instance=ExtResource( 4 )]
 

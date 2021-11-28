@@ -7,12 +7,10 @@
 [node name="Enemy" type="KinematicBody2D"]
 script = ExtResource( 2 )
 
-[node name="Sprite" type="Sprite" parent="."]
-position = Vector2( -1.22672, -1.00844 )
-scale = Vector2( 0.0294549, 0.0312242 )
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
 
 [node name="Timer" type="Timer" parent="."]
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
