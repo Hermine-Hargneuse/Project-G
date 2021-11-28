@@ -8,7 +8,7 @@ export (int) var wave_limit
 #export (Array, NodePath) var spawn_position
 
 #list of all the enemies with spawn rates
-var enemies = []
+var enemies = [] #differente scene enemy
 var enemy_rate = [0.25, 0.47]
 
 # Nb of enemies in a sub wave
