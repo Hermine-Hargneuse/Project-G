@@ -1,5 +1,6 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
+[ext_resource path="res://Scene/Map.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scene/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scripts/MainScene.gd" type="Script" id=3]
 [ext_resource path="res://Scene/Wave_controller.tscn" type="PackedScene" id=4]
@@ -7,9 +8,12 @@
 [node name="MainScene" type="Node2D"]
 script = ExtResource( 3 )
 
+[node name="Map" parent="." instance=ExtResource( 1 )]
+position = Vector2( 541.409, 322.435 )
+
 [node name="Player" parent="." instance=ExtResource( 2 )]
 visible = true
-position = Vector2( 346.847, 164.296 )
+position = Vector2( 551.391, 339.109 )
 
 [node name="Wave_controller" parent="." instance=ExtResource( 4 )]
 
