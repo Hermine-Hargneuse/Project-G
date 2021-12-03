@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Force Trail.wav-06871cb2306ed4c71a4f972c7a1bbab0.sample"
+
+[deps]
+
+source_file="res://Principal Assets FinalEve/OST/Force Trail.wav"
+dest_files=[ "res://.import/Force Trail.wav-06871cb2306ed4c71a4f972c7a1bbab0.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Distorted Evolution.wav-5b565adf0727a323832511b16738cce0.sample"
+
+[deps]
+
+source_file="res://Principal Assets FinalEve/OST/Distorted Evolution.wav"
+dest_files=[ "res://.import/Distorted Evolution.wav-5b565adf0727a323832511b16738cce0.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

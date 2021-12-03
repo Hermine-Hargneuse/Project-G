@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Theme of Aya.wav-9e659179b686e407ef03f36eae211748.sample"
+
+[deps]
+
+source_file="res://Principal Assets FinalEve/OST/Theme of Aya.wav"
+dest_files=[ "res://.import/Theme of Aya.wav-9e659179b686e407ef03f36eae211748.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
