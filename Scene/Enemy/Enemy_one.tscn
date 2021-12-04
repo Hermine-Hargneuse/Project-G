@@ -1,0 +1,24 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Scripts/Enemy/Enemy_one.gd" type="Script" id=1]
+[ext_resource path="res://Scene/Enemy/Enemy.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Assets/Ennemies.png" type="Texture" id=3]
+
+[sub_resource type="AtlasTexture" id=1]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 0, 0, 16, 16 )
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ SubResource( 1 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[node name="Enemy_one" instance=ExtResource( 2 )]
+script = ExtResource( 1 )
+
+[node name="AnimatedSprite" parent="." index="2"]
+frames = SubResource( 2 )

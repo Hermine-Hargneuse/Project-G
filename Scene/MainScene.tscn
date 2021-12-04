@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scripts/MainScene.gd" type="Script" id=3]
+[ext_resource path="res://Scene/Wave_controller.tscn" type="PackedScene" id=4]
+
+[node name="MainScene" type="Node"]
+script = ExtResource( 3 )
+
+[node name="Wave_controller" parent="." instance=ExtResource( 4 )]
+
+[node name="Enemy_spawn_timer" type="Timer" parent="."]
+autostart = true
+[connection signal="timeout" from="Enemy_spawn_timer" to="." method="_on_Enemy_spawn_timer_timeout"]

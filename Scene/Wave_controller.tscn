@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scene/Wave_start.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scripts/Wave_controller.gd" type="Script" id=2]
+
+[node name="Wave_controller" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Spawn_Rate" type="Timer" parent="."]
+
+[node name="Spawn_Delay" type="Timer" parent="."]
+
+[node name="Wave_start" parent="." instance=ExtResource( 1 )]
+[connection signal="timeout" from="Spawn_Rate" to="." method="_on_Spawn_Rate_timeout"]
+[connection signal="timeout" from="Spawn_Delay" to="." method="_on_Spawn_Delay_timeout"]
+[connection signal="pressed" from="Wave_start" to="." method="_on_Wave_start_pressed"]
