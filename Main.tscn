@@ -8,6 +8,7 @@
 [ext_resource path="res://actors/Enemy.tscn" type="PackedScene" id=6]
 
 [node name="Main" type="Node2D"]
+visible = false
 position = Vector2( -112, -24 )
 script = ExtResource( 4 )
 
