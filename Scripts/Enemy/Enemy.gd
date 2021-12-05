@@ -1,6 +1,5 @@
 extends KinematicBody2D
 
-
 var player = null
 #var move = Vector2D().ZERO
 const WALK_SPEED = 100
