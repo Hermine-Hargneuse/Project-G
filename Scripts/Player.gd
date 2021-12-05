@@ -1,20 +1,48 @@
 extends KinematicBody2D
+class_name Player
 
-var speed = 150	
-var velocity = Vector2()
+
+signal player_fired_bullet(bullet, position, direction)
+
+
+export (int) var speed = 150
+
+
+onready var weapon = $Weapon
+onready var health_stat = $Health
+
 
 func _ready():
-	Global.player = self
-	
-func _exit_tree():
-	Global.player = null
-	
-func _process(delta):
-	velocity.x=  int(Input.is_action_pressed("move_right")) - int(Input.is_action_pressed("move_left"))
-	velocity.y=  int(Input.is_action_pressed("move_down")) - int(Input.is_action_pressed("move_up"))
+	weapon.connect("weapon_fired", self, "shoot")
 
-	#global_position += speed * velocity * delta
-	move_and_slide(speed * velocity  )
+
+func _physics_process(delta):
+	var movement_direction := Vector2.ZERO
+
+	if Input.is_action_pressed("up"):
+		movement_direction.y = -1
+	if Input.is_action_pressed("down"):
+		movement_direction.y = 1
+	if Input.is_action_pressed("left"):
+		movement_direction.x = -1
+	if Input.is_action_pressed("right"):
+		movement_direction.x = 1
+
+	movement_direction = movement_direction.normalized()
+	move_and_slide(movement_direction * speed)
 	
-func die():
-	queue_free()
+	look_at(get_global_mouse_position())
+
+
+func _unhandled_input(event):
+	if event.is_action_released("shoot"):
+		weapon.shoot()
+
+
+func shoot(bullet_instance, location: Vector2, direction: Vector2):
+	emit_signal("player_fired_bullet", bullet_instance, location, direction)
+
+
+func handle_hit():
+	health_stat.health -= 10
+	print("player hit! ", health_stat.health)

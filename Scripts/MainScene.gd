@@ -1,16 +1,22 @@
 extends Node
 
+
+#onready var player: Player = $Player
+
+
 var enemy_One = preload("res://Scene/Enemy/Enemy_one.tscn")
 var enemy_Two = preload("res://Scene/Enemy/Enemy_two.tscn")
 var enemy_Three = preload("res://Scene/Enemy/Enemy_three.tscn")
 var player = preload("res://Scene/Player.tscn")
 var map = preload("res://Scene/Map.tscn")
+onready var bullet_manager = $BulletManager
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	Global.node_creation_parent = self
 	#player spawn
 	Global.instance_node(map, Vector2(580,300), self)
 	Global.instance_node(player, Vector2(580,300), self)
+	player.connect("player_fired_bullet", bullet_manager, "handle_bullet_spawned")
 
 func _exit_tree():
 	Global.node_creation_parent = null

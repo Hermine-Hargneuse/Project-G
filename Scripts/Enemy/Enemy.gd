@@ -4,6 +4,14 @@ extends KinematicBody2D
 var player = null
 #var move = Vector2D().ZERO
 const WALK_SPEED = 100
+onready var health_stat = $Health
+
+
+func handle_hit():
+	health_stat.health -= 10
+	if health_stat.health <= 0:
+		queue_free()
+
 
 func _physics_process(delta):
 	# enemy movement toward player
@@ -14,9 +22,10 @@ func _physics_process(delta):
 	# when  enemy collided with player, player dies 
 	for i in get_slide_count():
 		var impact = get_slide_collision(i)
-		var obj = impact.collider
-		if obj.is_in_group("player"):
-			obj.die()
+		#var obj = impact.collidera
+		#if obj.is_in_group("player"):
+			#obj.die()
+			
 
 
 func _on_Timer_timeout():
