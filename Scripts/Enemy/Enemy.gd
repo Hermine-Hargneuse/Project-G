@@ -13,10 +13,11 @@ func handle_hit():
 
 
 func _physics_process(delta):
-	# enemy movement toward player
+
 	if Global.player != null : 
 		var direction = global_position.direction_to(Global.player.global_position).normalized()
 		move_and_slide(direction * WALK_SPEED )
+		print('moving')
 	
 	# when  enemy collided with player, player dies 
 	for i in get_slide_count():

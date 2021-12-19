@@ -2,9 +2,9 @@ extends Node2D
 
 
 
-var enemy_One = preload("res://Scene/Enemy/Enemy_one.tscn")
-var enemy_Two = preload("res://Scene/Enemy/Enemy_two.tscn")
-var enemy_Three = preload("res://Scene/Enemy/Enemy_three.tscn")
+var enemy_One = load("res://Scene/Enemy/Enemy_one.tscn")
+var enemy_Two = load("res://Scene/Enemy/Enemy_two.tscn")
+var enemy_Three = load("res://Scene/Enemy/Enemy_three.tscn")
 
 #what wave we are on and sub wave each enemy will spawn from and the max limits of wave
 var wave = 0

@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://weapons/Bullet.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scene/Bullet.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Principal Assets FinalEve/Tileset/onlyObjects_default.png" type="Texture" id=2]
-[ext_resource path="res://weapons/Weapon.gd" type="Script" id=3]
+[ext_resource path="res://Scripts/Weapon.gd" type="Script" id=3]
 [ext_resource path="res://Principal Assets FinalEve/Characters and Ennemies/Gun1.png" type="Texture" id=4]
 
 [sub_resource type="Animation" id=1]
