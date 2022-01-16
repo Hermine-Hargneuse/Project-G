@@ -13,11 +13,8 @@ onready var health_stat = $Health
 
 
 func _ready():
-	Global.player = self
 	weapon.connect("weapon_fired", self, "shoot")
-	
-func _exit_tree():
-	Global.player = null
+
 
 func _physics_process(delta):
 	var movement_direction := Vector2.ZERO
@@ -49,7 +46,3 @@ func shoot(bullet_instance, location: Vector2, direction: Vector2):
 func handle_hit():
 	health_stat.health -= 10
 	print("player hit! ", health_stat.health)
-
-
-func _on_Weapon_weapon_fired(bullet, location, direction):
-	pass # Replace with function body.

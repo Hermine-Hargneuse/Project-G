@@ -17,9 +17,7 @@ func _physics_process(delta):
 	if Global.player != null : 
 		var direction = global_position.direction_to(Global.player.global_position).normalized()
 		move_and_slide(direction * WALK_SPEED )
-		#print('moving')
-	else :
-		print('Player doesnt exist')
+		print('moving')
 	
 	# when  enemy collided with player, player dies 
 	for i in get_slide_count():
