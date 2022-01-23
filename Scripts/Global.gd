@@ -3,11 +3,16 @@ extends Node
 
 var node_creation_parent = null
 
+<<<<<<< Updated upstream
 #var player = load("res://Scene/Player.tscn")
 onready var player = $Player
 #onready var bullet = $Bullet
 
 
+=======
+
+onready var player = $player
+>>>>>>> Stashed changes
 func instance_node(node, location, parent):
 		var node_instance = node.instance()
 		parent.add_child(node_instance)

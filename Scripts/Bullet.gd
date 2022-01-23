@@ -5,7 +5,7 @@ class_name Bullet
 export (int) var speed = 10
 
 
-onready var kill_timer = $KillTimer
+onready var kill_timer = 100
 
 
 var direction := Vector2.ZERO

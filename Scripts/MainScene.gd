@@ -16,10 +16,16 @@ var bullet_manager = load("res://Scripts/BulletManager.gd")
 func _ready():
 	Global.node_creation_parent = self
 	#player spawn
+<<<<<<< Updated upstream
 	Global.instance_node(map, Vector2(580,300), self)
 	player_script.connect("player_fired_bullet", bullet_manager, "handle_bullet_spawned")
 	Global.instance_node(player, Vector2(580,300), self)	
 
+=======
+	#Global.instance_node(map, Vector2(580,300), self)
+	Global.instance_node(player, Vector2(580,300), self)
+	player.connect("player_fired_bullet", bullet_manager, "handle_bullet_spawned")
+>>>>>>> Stashed changes
 
 func _exit_tree():
 	Global.node_creation_parent = null
