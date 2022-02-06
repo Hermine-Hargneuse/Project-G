@@ -19,6 +19,10 @@ func _ready():
 	
 func _exit_tree():
 	Global.player = null
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
 
 func _physics_process(delta):
 	var movement_direction := Vector2.ZERO
