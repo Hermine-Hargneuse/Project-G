@@ -9,15 +9,20 @@ var enemy_Two = load("res://Scene/Enemy/Enemy_two.tscn")
 var enemy_Three = load("res://Scene/Enemy/Enemy_three.tscn")
 var player = load("res://Scene/Player.tscn")
 var map = load("res://Scene/Map.tscn")
-onready var bullet_manager = $BulletManager
+var bullet_manager = load("res://Scene/BulletManager.tscn")
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	Global.node_creation_parent = self
 	#player spawn
+	Global.bullet_manager = bullet_manager
+	
+	print(bullet_manager)
+	
 	Global.instance_node(map, Vector2(580,300), self)
 	Global.instance_node(player, Vector2(580,300), self)
-	print(Global.player)
-	player.connect("player_fired_bullet", bullet_manager, "handle_bullet_spawned")
+	Global.instance_node(bullet_manager, Vector2(580,300), self)
+	
+	Global.player.connect("player_fired_bullet", Global.bullet_manager, "handle_bullet_spawned")
 
 func _exit_tree():
 	Global.node_creation_parent = null

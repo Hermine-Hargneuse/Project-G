@@ -11,10 +11,12 @@ export (int) var speed = 150
 onready var weapon = $Weapon
 onready var health_stat = $Health
 
-
 func _ready():
+	Global.player = self
 	weapon.connect("weapon_fired", self, "shoot")
 
+func _exit_tree():
+	Global.player = null
 
 func _physics_process(delta):
 	var movement_direction := Vector2.ZERO
@@ -41,7 +43,6 @@ func _unhandled_input(event):
 
 func shoot(bullet_instance, location: Vector2, direction: Vector2):
 	emit_signal("player_fired_bullet", bullet_instance, location, direction)
-
 
 func handle_hit():
 	health_stat.health -= 10
