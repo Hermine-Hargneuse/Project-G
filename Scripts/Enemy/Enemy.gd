@@ -5,12 +5,10 @@ extends KinematicBody2D
 const WALK_SPEED = 100
 onready var health_stat = $Health
 
-
 func handle_hit():
 	health_stat.health -= 10
 	if health_stat.health <= 0:
 		queue_free()
-
 
 func _physics_process(delta):
 
@@ -18,12 +16,6 @@ func _physics_process(delta):
 	#if player != null : 
 		var direction = global_position.direction_to(Global.player.global_position).normalized()
 		move_and_slide(direction * WALK_SPEED )
-<<<<<<< Updated upstream
-		#print('moving')
-	else :
-		print('Player doesnt exist')
-=======
->>>>>>> Stashed changes
 	
 	# when  enemy collided with player, player dies 
 	for i in get_slide_count():

@@ -8,34 +8,24 @@ var enemy_One = load("res://Scene/Enemy/Enemy_one.tscn")
 var enemy_Two = load("res://Scene/Enemy/Enemy_two.tscn")
 var enemy_Three = load("res://Scene/Enemy/Enemy_three.tscn")
 var player = load("res://Scene/Player.tscn")
-#onready var player_p: Player = $Player
+
 var map = load("res://Scene/Map.tscn")
 var bullet_manager = load("res://Scene/Bullet_manager.tscn")
 #onready var Bullet_manager = $BulletManager
 # Called when the node enters the scene tree for the first atime.
+
 func _ready():
 	Global.node_creation_parent = self
 	#player spawn
-<<<<<<< Updated upstream
-	Global.instance_node(map, Vector2(580,300), self)
-#	print('bullet_Manager')
-#	print(bullet_manager)
-
-	Global.instance_node(player, Vector2(580,300), self)	
-	print('Player')
-	print(Global.player)
-	#print(Global.player)
+	Global.bullet_manager = bullet_manager
 	
-	Global.instance_node(bullet_manager, Vector2(580,300), self)
-	print(Global.bullet_manager)
-	Global.player.connect("player_fired_bullet", Global.bullet_manager, "handle_bullet_spawned")
-	#Global.player.connect("player_fired_bullet", bullet_manager, "handle_bullet_spawned")
-
-=======
-	#Global.instance_node(map, Vector2(580,300), self)
+	print(bullet_manager)
+	
+	Global.instance_node(map, Vector2(580,300), self)
 	Global.instance_node(player, Vector2(580,300), self)
-	player.connect("player_fired_bullet", bullet_manager, "handle_bullet_spawned")
->>>>>>> Stashed changes
+	Global.instance_node(bullet_manager, Vector2(580,300), self)
+	
+	Global.player.connect("player_fired_bullet", Global.bullet_manager, "handle_bullet_spawned")
 
 func _exit_tree():
 	Global.node_creation_parent = null
