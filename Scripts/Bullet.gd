@@ -12,19 +12,21 @@ var direction := Vector2.ZERO
 
 
 func _ready():
+	print('Start bullet cooldown')
 	kill_timer.start()
-
+	
 
 func _physics_process(delta):
 	if direction != Vector2.ZERO:
 		var velocity = direction * speed
 
 		global_position += velocity
-
+		print('direction calculated')
 
 func set_direction(direction: Vector2):
 	self.direction = direction
 	rotation += direction.angle()
+	print('direction applied')
 
 
 func _on_KillTimer_timeout():

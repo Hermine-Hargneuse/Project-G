@@ -8,6 +8,7 @@ signal player_fired_bullet(bullet, position, direction)
 export (int) var speed = 150
 
 
+
 onready var weapon = $Weapon
 onready var health_stat = $Health
 
@@ -51,5 +52,5 @@ func handle_hit():
 	print("player hit! ", health_stat.health)
 
 
-func _on_Weapon_weapon_fired(bullet, location, direction):
-	pass # Replace with function body.
+#func _on_Weapon_weapon_fired(bullet, location, direction):
+#	pass # Replace with function body.

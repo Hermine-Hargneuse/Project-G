@@ -1,7 +1,14 @@
 extends Node2D
 
-
+func _ready():
+	Global.bullet_manager = self
+	
+func _exit_tree():
+	Global.bullet_manager = null
+	
+	
 func handle_bullet_spawned(bullet: Bullet, position: Vector2, direction: Vector2):
+	print("In Handle buller spawned")
 	add_child(bullet)
 	bullet.global_position = position
 	bullet.set_direction(direction)

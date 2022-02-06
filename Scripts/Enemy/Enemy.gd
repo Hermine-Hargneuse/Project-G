@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-var player = null
+#var player = null
 #var move = Vector2D().ZERO
 const WALK_SPEED = 100
 onready var health_stat = $Health
@@ -15,6 +15,7 @@ func handle_hit():
 func _physics_process(delta):
 
 	if Global.player != null : 
+	#if player != null : 
 		var direction = global_position.direction_to(Global.player.global_position).normalized()
 		move_and_slide(direction * WALK_SPEED )
 		#print('moving')

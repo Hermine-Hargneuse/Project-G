@@ -4,9 +4,10 @@ extends Node
 var node_creation_parent = null
 
 #var player = load("res://Scene/Player.tscn")
-onready var player = $Player
+#onready var player : Player = $Player
 #onready var bullet = $Bullet
-
+var player = null
+var bullet_manager = null
 
 func instance_node(node, location, parent):
 		var node_instance = node.instance()

@@ -17,8 +17,8 @@ func shoot():
 	if attack_cooldown.is_stopped() and Bullet != null:
 		print('Shooting')
 		var bullet_instance = Bullet.instance()
-		print('bullet instance')
-		print(bullet_instance)
+		#print('bullet instance')
+		#print(bullet_instance)
 		var direction = (gun_direction.global_position - end_of_gun.global_position).normalized()
 		emit_signal("weapon_fired", bullet_instance, end_of_gun.global_position, direction)
 		attack_cooldown.start()
