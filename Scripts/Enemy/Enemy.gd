@@ -6,6 +6,11 @@ const WALK_SPEED = 100
 onready var health_stat = $Health
 
 func handle_hit():
+	
+	var direction = global_position.direction_to(Global.player.global_position).normalized()
+	
+	move_and_slide(direction * -(WALK_SPEED * 10) )
+	
 	health_stat.health -= 10
 	if health_stat.health <= 0:
 		queue_free()
