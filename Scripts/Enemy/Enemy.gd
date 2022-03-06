@@ -5,6 +5,13 @@ extends KinematicBody2D
 const WALK_SPEED = 100
 onready var health_stat = $Health
 
+func _ready():
+	Global.enemy = self
+
+func _exit_tree():
+	Global.enemy = null
+	
+	
 func handle_hit():
 	health_stat.health -= 10
 	if health_stat.health <= 0:

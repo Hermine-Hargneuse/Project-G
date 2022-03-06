@@ -8,9 +8,39 @@
 script = ExtResource( 3 )
 
 [node name="Wave_controller" parent="." instance=ExtResource( 4 )]
+position = Vector2( -1.52588e-05, 2.83163 )
+wave_limit = 1
+spawn_position = [ NodePath("Spawning Position/spawn_00"), NodePath("Spawning Position/spawn_01"), NodePath("Spawning Position/spawn_02"), NodePath("Spawning Position/spawn_03"), NodePath("Spawning Position/spawn_04"), NodePath("Spawning Position/spawn_05") ]
+enemy_count = [ [ 5, 2 ], [ 3 ] ]
+enemy_type = [ [ 0, 1 ], [ 0 ] ]
 
-[node name="Enemy_spawn_timer" type="Timer" parent="."]
-autostart = true
+[node name="Enemy_spawn_timer" type="Timer" parent="Wave_controller"]
+
+[node name="Wave_timer" type="Timer" parent="Wave_controller"]
+wait_time = 4.0
+
+[node name="Spawning_Position" type="Node2D" parent="Wave_controller"]
+
+[node name="spawn_00" type="Position2D" parent="Wave_controller/Spawning_Position"]
+position = Vector2( 353.953, 134.03 )
+
+[node name="spawn_01" type="Position2D" parent="Wave_controller/Spawning_Position"]
+position = Vector2( 544.615, 121.76 )
+
+[node name="spawn_02" type="Position2D" parent="Wave_controller/Spawning_Position"]
+position = Vector2( 746.605, 319.973 )
+
+[node name="spawn_03" type="Position2D" parent="Wave_controller/Spawning_Position"]
+position = Vector2( 702.242, 513.468 )
+
+[node name="spawn_04" type="Position2D" parent="Wave_controller/Spawning_Position"]
+position = Vector2( 285.97, 518.346 )
+
+[node name="spawn_05" type="Position2D" parent="Wave_controller/Spawning_Position"]
+position = Vector2( 192.686, 301.924 )
 
 [node name="Bullet_manager" parent="." instance=ExtResource( 1 )]
-[connection signal="timeout" from="Enemy_spawn_timer" to="." method="_on_Enemy_spawn_timer_timeout"]
+visible = false
+position = Vector2( 0.943871, 3.7755 )
+[connection signal="timeout" from="Wave_controller/Enemy_spawn_timer" to="Wave_controller" method="_on_Enemy_spawn_timer_timeout"]
+[connection signal="timeout" from="Wave_controller/Wave_timer" to="Wave_controller" method="_on_Wave_timer_timeout"]

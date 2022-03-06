@@ -32,7 +32,6 @@ config/icon="res://Assets/icon.png"
 
 [autoload]
 
-Instancer="*res://Scripts/Instancer.gd"
 Global="*res://Scripts/Global.gd"
 
 [display]

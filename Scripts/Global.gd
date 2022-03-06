@@ -4,6 +4,7 @@ extends Node
 var node_creation_parent = null
 var player = null
 var bullet_manager = null
+var enemy = null
 
 func instance_node(node, location, parent):
 		var node_instance = node.instance()
